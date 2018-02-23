@@ -16,6 +16,15 @@ class Counter:
 
 c = Counter()
 
+def root():
+    return redirect('/automation/'), 302
+
+def automation(req, resp):
+    return render_template('index.html')
+
+def automation_add():
+    return render_template('automation/add.html')
+
 def index(req, resp):
     yield from picoweb.start_response(resp)
     yield from resp.awrite("Hello world from picoweb running on the ESP32 {}.".format(c.value))
@@ -23,6 +32,8 @@ def index(req, resp):
 
 ROUTES = [
     ("/", index),
+    ("/automation/", automation),
+    ("/automation/add", automation_add)
 ]
 
 loop = uasyncio.get_event_loop()
