@@ -2,12 +2,12 @@ import network
 
 IP_ADDRESS="0.0.0.0"
 
-def _connect():
+def connect():
     ssid = "bulochka"
     password =  "i122i122"
-    
 
-    station = network.WLAN(network.AP_IF)
+
+    station = network.WLAN(network.STA_IF)
 
     if station.isconnected() == True:
         print("Already connected")
@@ -24,11 +24,11 @@ def _connect():
     print(station.ifconfig())
     IP_ADDRESS = station.ifconfig()
 
-def connect():
-    ap = network.WLAN(network.AP_IF)
-    ap.config(essid='AUT')
-    ap.config(authmode=3, password='123456789')
-    ap.active(True)
+#def _connect():
+#    ap = network.WLAN(network.AP_IF)
+#    ap.config(essid='AUT')
+#    ap.config(authmode=3, password='123456789')
+#    ap.active(True)
 
 
 connect()

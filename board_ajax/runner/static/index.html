@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heating Controller v0.1</title>
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/main.js"></script>
+    <link rel=stylesheet type=text/css href="main.css">
+</head>
+<body>
+
+
+<div class="container">
+
+    <ul class="tabs">
+        <li><a id='tab-1' class="tab-link current"
+               href="/static/automation/add.html">автоматизація</a></li>
+        <li><a id='tab-2' class="tab-link" href="/static/automation/add.html">конфігурація</a>
+        </li>
+        <li><a id='tab-3' class="tab-link" href="/static/automation/add.html">статус</a>
+        </li>
+        <li><a id='tab-4' class="tab-link" href="/static/automation/add.html">...</a>
+        </li>
+    </ul>
+    <div class="spinner loader">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+    <div id="tabcontent" class="tab-content current">
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

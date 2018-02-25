@@ -1,0 +1,55 @@
+<div id="new-rule-##id##">
+    <select name="rule_type_##id##" onchange="show_rule(this.value, '##id##')">
+        <option value="temp-rule_##id##">
+            Температурна умова
+        </option>
+        <option value="motor-status_##id##">
+            Стан насосу
+        </option>
+        <option value="time-related_##id##">
+            Часова умова
+        </option>
+    </select>
+    <input type="button" value="видалити" onclick="remove_rule('##id##');">
+
+    <div class="rule-##id##-container">
+        <div id="temp-rule_##id##" class="rule-##id## rule">
+            <label for="temperature-##id##-number">температура:</label>
+            <select name="temp_source_##id##" id="temperature-##id##-number">
+                <option value="1">вулиця</option>
+                <option value="2">вихід з котла</option>
+            </select>
+            <select name="temp_diff_type_##id##" id="temperature-##id##-rule">
+                <option value="1"> ></option>
+                <option value="2"> <</option>
+                <option value="3"> <=</option>
+                <option value="4"> >=</option>
+                <option value="5"> <></option>
+            </select>
+            <label for="temperature-##id##-limit">значення</label>
+            <input name="temp_value_##id##" id="temperature-##id##-limit" type="number">
+        </div>
+
+        <div id="motor-status_##id##" class="rule-##id## rule"
+             style="display: none">
+            <label for="motor-##id##-number">насос:</label>
+            <select name="motor_source_id_##id##" id="motor-##id##-number">
+                <option value="1">вихід з газового котла</option>
+                <option value="1">вихід з деревяного котла</option>
+            </select>
+            <select name="motor_rule_##id##" id="motor-##id##-rule">
+                <option value="on"> увімкнений</option>
+                <option value="off"> вимкнений</option>
+            </select>
+        </div>
+
+        <div id="time-related_##id##" class="rule-##id## rule"
+             style="display: none">
+            <label for="time-##id##-start">у проміжку від:</label>
+            <input name="time_start_##id##" id="time-##id##-start" type="time">
+            <label for="time-##id##-end"> до:</label>
+            <input name="time_end_##id##" id="time-##id##-end" type="time">
+        </div>
+    </div>
+    <hr>
+</div>

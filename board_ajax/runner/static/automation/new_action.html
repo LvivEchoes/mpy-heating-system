@@ -1,0 +1,97 @@
+<div id="new-action-##id##">
+
+    <select name="action_type_##id##"
+            onchange="show_action(this.value, '##id##')">
+        <option value="motor_action_##id##">Робота з насосом</option>
+        <option value="3way_action_##id##">Робота з трьох-ходовим
+            клапаном
+        </option>
+        <option value="clap_action_##id##">Робота з клапаном</option>
+        <option value="vent_action_##id##">Робота з вентилятором</option>
+    </select>
+
+
+    <input type="button" value="видалити"
+           onclick="remove_action('##id##');">
+
+
+    <div class="action-##id##-container">
+        <div id="motor_action_##id##" class="action-##id## action"
+             style="display: block;">
+            <label
+                    for="motor-##id##-number">насос:</label>
+            <select name="motor_source_##id##" id="motor-##id##-number">
+                <option value="1">вихід з газового котла</option>
+                <option value="2">вихід з деревяного котла</option>
+            </select>
+            <select name="motor_action_##id##" id="motor-##id##-action">
+                <option value="0"> вимкнути</option>
+                <option value="1"> увімкнути</option>
+                <option value="2"> перемкнути стан</option>
+            </select>
+
+        </div>
+
+        <div id="3way_action_##id##" class="action-##id## action"
+             style="display: none;">
+            <label
+                    for="action-##id##-3-way-clap-source"> Режим
+                роботи:</label>
+            <select name="3way_clap_source_##id##"
+                    id="action-##id##-3-way-clap-source">
+                <option value="0">Клапан 1</option>
+                <option value="1">Клапан 2</option>
+                <option value="2">Клапан 3</option>
+            </select>
+            <label
+                    for="action-##id##-3-way-clap-mode"> Режим
+                роботи:</label>
+            <select name="3way_clap_mode_##id##"
+                    id="action-##id##-3-way-clap-mode">
+                <option value="0"> закрити</option>
+                <option value="1"> 1 -> 2</option>
+                <option value="2"> 2 -> 3</option>
+            </select>
+        </div>
+
+        <div id="clap_action_##id##" class="action-##id## action"
+             style="display: none;">
+            <label
+                    for="action-##id##-clap-source"> Режим
+                роботи:</label>
+            <select name="clap_source_##id##"
+                    id="action-##id##-clap-source">
+                <option value="0">Клапан 1</option>
+                <option value="1">Клапан 2</option>
+                <option value="2">Клапан 3</option>
+            </select>
+            <label
+                    for="action-##id##-clap-mode"> Режим
+                роботи:</label>
+            <select name="clap_mode_##id##" id="action-##id##-clap-mode">
+                <option value="0"> закрити</option>
+                <option value="1"> відкрити</option>
+            </select>
+        </div>
+
+        <div id="vent_action_##id##" class="action-##id## action"
+             style="display: none;">
+            <label
+                    for="action-##id##-vent-source"> Режим
+                роботи:</label>
+            <select name="vent_source_##id##"
+                    id="action-##id##-vent-source">
+                <option value="0">Вентилятор 1</option>
+                <option value="1">Вентилятор 2</option>
+            </select>
+            <label
+                    for="action-##id##-vent-mode"> Режим
+                роботи:</label>
+            <select name="vent_mode_##id##" id="action-##id##-vent-mode">
+                <option value="0"> вимкнути</option>
+                <option value="1"> увімкнути</option>
+            </select>
+        </div>
+        <hr>
+    </div>
+</div>

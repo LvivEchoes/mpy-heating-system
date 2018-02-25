@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати автоматизацію</title>
+</head>
+<body>
+<form id="new_automation" method="post" action="/add_rule/" name="new_rule">
+    <label class="section-labels" for="rules">Правила</label>
+    <div id="rules">
+    </div>
+    <br>
+    <input type="button" value="додати умову" onclick="add_rule()">
+    <br>
+    <br>
+    <label class="section-labels" for="actions">Події</label>
+    <div id="actions">
+    </div>
+    <input type="button" value="додати подію" onclick="add_action()">
+    <br>
+    <br>
+    <input type="reset" value="відміна"
+           onclick="window.location.href='/automation/'">
+    <input type="button" value="зберегти" onclick="add_rule_ajax()">
+
+</form>
+</body>
+</html>
