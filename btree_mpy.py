@@ -11,7 +11,6 @@ class BTree(dict):
 
         except OSError:
             self._db = open(path, "wb")
-
             self._db.write(b'{}')
             self.flash()
             self._db.close()
@@ -21,9 +20,7 @@ class BTree(dict):
 
     def close(self):
         self._db = open(self._path, "wb")
-
         self._db.write(json.dumps(self).encode())
-
         self._db.close()
 
     def __setitem__(self, k, v) -> None:

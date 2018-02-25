@@ -1,12 +1,12 @@
 from flask import Flask, redirect
 
 app = Flask(__name__)
-app._static_folder = "/Users/ptsupka/Documents/pyb/board_ajax/runner/static"
+app._static_folder = "/Users/ptsupka/Documents/pyb/board/runner/static"
 
-from fl import BTree
+from btree_mpy import BTree
 
 db = BTree()
-db.open('db2')
+db.open('db.db')
 
 
 @app.route('/add_rule/')
