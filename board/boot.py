@@ -24,11 +24,11 @@ def connect():
     print(station.ifconfig())
     IP_ADDRESS = station.ifconfig()
 
-#def _connect():
-#    ap = network.WLAN(network.AP_IF)
-#    ap.config(essid='AUT')
-#    ap.config(authmode=3, password='123456789')
-#    ap.active(True)
+def _connect():
+    ap = network.WLAN(network.AP_IF)
+    ap.config(essid='AUT')
+    ap.config(authmode=3, password='123456789')
+    ap.active(True)
 
 
-connect()
+_connect()

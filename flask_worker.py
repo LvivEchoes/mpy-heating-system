@@ -1,7 +1,7 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, render_template
 
 app = Flask(__name__)
-app._static_folder = "/Users/ptsupka/Documents/pyb/board/runner/static"
+app._static_folder = "board/runner/static"
 
 from btree_mpy import BTree
 
@@ -9,9 +9,9 @@ db = BTree()
 db.open('db.db')
 
 
-@app.route('/add_rule/')
+@app.route('/automation_/')
 def root():
-    return redirect('/automation/'), 302
+    return render_template('/automation/'), 302
 
 
 app.run()

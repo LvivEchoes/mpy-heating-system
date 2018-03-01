@@ -122,3 +122,24 @@ ul.tabs li a.current {
 .section-labels{
     font-weight: bold;
 }
+
+
+input, select{
+    border: 1px solid #000000;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+table tbody {
+    background-color: white;
+}
+table thead {
+    background-color: silver;
+    font-weight: bold;
+}
+table td {
+    border: 1px black solid;
+}

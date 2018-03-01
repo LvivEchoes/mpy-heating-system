@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конфігурації системи</title>
+</head>
+<body>
+<div class="">
+    <label class="section-labels" for="temp_sensors">Температурні давачі</label>
+    <div id="temp_sensors">
+        <table class="temp_table table">
+            <thead>
+            <tr>
+                <td>Назва давача</td>
+                <td>Адреса</td>
+                <td>Поточне значення</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Вулиця</td>
+                <td>5ec5cacaa76a6</td>
+                <td>25</td>
+                <td><input id="yard" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="yard" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            <tr>
+                <td>Котельня</td>
+                <td>567c9cacaa76a6</td>
+                <td>21</td>
+                <td><input id="kotel" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="kotel" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <label class="section-labels" for="pomps">Насоси</label>
+    <div id="pomps">
+        <table class="pomps_table table">
+            <thead>
+            <tr>
+                <td>Назва насосу</td>
+                <td>Порт</td>
+                <td>Поточне значення</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Вихід з баку</td>
+                <td>1</td>
+                <td>Вимкнено</td>
+                <td><input id="yard" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="yard" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            <tr>
+                <td>Вхід в бак</td>
+                <td>2</td>
+                <td>Увімкнено</td>
+                <td><input id="kotel" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="kotel" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <label class="section-labels" for="taps">Клапани</label>
+    <div id="taps">
+        <table class="taps_table table">
+            <thead>
+            <tr>
+                <td>Назва клапану</td>
+                <td>Порт</td>
+                <td>Поточне значення</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Вихід з баку</td>
+                <td>1</td>
+                <td>Закрито</td>
+                <td><input id="yard" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="yard" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            <tr>
+                <td>Вхід в бак</td>
+                <td>2</td>
+                <td>Відкрито</td>
+                <td><input id="kotel" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="kotel" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <label class="section-labels" for="3way_taps">Трьох-ходові клапани</label>
+    <div id="3way_taps">
+         <table class="3way_taps_table table">
+            <thead>
+            <tr>
+                <td>Назва клапану</td>
+                <td>Порт для закриття</td>
+                <td>Порт для відкриття</td>
+                <td>Поточний стан</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Вихід з баку</td>
+                <td>1</td>
+                <td>2</td>
+                <td>Закрито</td>
+                <td><input id="yard" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="yard" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            <tr>
+                <td>Вхід в бак</td>
+                <td>4</td>
+                <td>5</td>
+                <td>Відкрито</td>
+                <td><input id="kotel" type="button" value="перейменувати" onclick="rename_value(this)"></td>
+                <td><input id="kotel" type="button" value="видалити" onclick="delete_row(this)"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+</body>
+</html>

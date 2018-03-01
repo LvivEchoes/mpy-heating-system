@@ -37,6 +37,7 @@ function loadTabContent(tabUrl) {
 function remove_rule(i) {
     $('#new-rule-' + i).remove();
 }
+
 function remove_action(i) {
     $('#new-action-' + i).remove();
 }
@@ -65,6 +66,7 @@ function add_action() {
         }
     });
 }
+
 function show_rule(rule, i) {
     var rules = document.getElementsByClassName('rule-' + i);
     for (var index = 0; index < rules.length; index++) {
@@ -72,6 +74,7 @@ function show_rule(rule, i) {
     }
     document.getElementById(rule).style.display = 'block';
 }
+
 function show_action(action, i) {
     var actions = document.getElementsByClassName('action-' + i);
     for (var index = 0; index < actions.length; index++) {
@@ -81,6 +84,52 @@ function show_action(action, i) {
 }
 
 
+function checkRequired(form) {
+
+
+    if (form.find('[required]').filter(function () {
+            $(this).css('border-color', 'red');
+            return this.value === ''
+
+
+        }).length > 0) {
+        alert("Деякі поля обов'язкові до заповення.");
+        return false;
+    }
+    return true;
+}
+
+$(document).ready(function () {
+    $('#new_automation').on('submit', checkRequired);
+});
+
+function check_all() {
+    if ($('#actions').children().length == 0) {
+        alert("Ви повинні ввести правила та події щоб зберегти нову автоматизацію.");
+        return false;
+    }
+
+    else if (!checkRequired($('#new_automation'))) {
+        return false;
+    }
+}
+
 function add_rule_ajax() {
-    console.log('form data is: ' + $('#new_automation :visible').serialize())
+    console.log('form data is: ' + $('#new_automation :visible').serialize());
+
+    if (check_all()) {
+        $('#new_automation').submit()
+
+    }
+
+}
+
+function rename_value(elm) {
+    console.log('Renaming: ', elm.id)
+    
+}
+
+function delete_row(elm) {
+    console.log('Deleting: ', elm.id)
+
 }

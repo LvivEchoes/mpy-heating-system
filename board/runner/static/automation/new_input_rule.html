@@ -27,7 +27,7 @@
                 <option value="5"> <></option>
             </select>
             <label for="temperature-##id##-limit">значення</label>
-            <input name="temp_value_##id##" id="temperature-##id##-limit" type="number">
+            <input required name="temp_value_##id##" id="temperature-##id##-limit" type="number">
         </div>
 
         <div id="motor-status_##id##" class="rule-##id## rule"
@@ -46,9 +46,9 @@
         <div id="time-related_##id##" class="rule-##id## rule"
              style="display: none">
             <label for="time-##id##-start">у проміжку від:</label>
-            <input name="time_start_##id##" id="time-##id##-start" type="time">
+            <input required name="time_start_##id##" id="time-##id##-start" type="time">
             <label for="time-##id##-end"> до:</label>
-            <input name="time_end_##id##" id="time-##id##-end" type="time">
+            <input required name="time_end_##id##" id="time-##id##-end" type="time">
         </div>
     </div>
     <hr>
