@@ -20,21 +20,28 @@
             </thead>
 
             <tbody>
-            <tr>
+            <tr class="row">
                 <td>Вулиця</td>
                 <td>5ec5cacaa76a6</td>
                 <td>25</td>
                 <td><input id="yard" type="button" value="перейменувати" onclick="rename_value(this)"></td>
                 <td><input id="yard" type="button" value="видалити" onclick="delete_row(this)"></td>
             </tr>
-            <tr>
+            <tr class="row">
                 <td>Котельня</td>
                 <td>567c9cacaa76a6</td>
                 <td>21</td>
                 <td><input id="kotel" type="button" value="перейменувати" onclick="rename_value(this)"></td>
                 <td><input id="kotel" type="button" value="видалити" onclick="delete_row(this)"></td>
             </tr>
+            <tr class="new-row">
+                <td><input name="sensor_name" type="text" required placeholder="Назва давача"/></td>
+                <td><input name="sensor_address" type="text" required placeholder="Адреса"/></td>
+                <td colspan="3"><input type="button" value="Додати" onclick="add_row($(this))"/></td>
+
+            </tr>
             </tbody>
+
         </table>
     </div>
     <label class="section-labels" for="pomps">Насоси</label>

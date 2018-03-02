@@ -131,6 +131,7 @@ input, select{
 table {
     width: 100%;
     text-align: center;
+    font-size: 10px;
 }
 
 table tbody {
@@ -142,4 +143,10 @@ table thead {
 }
 table td {
     border: 1px black solid;
+}
+
+table input[type="button"] {
+    width: 80%;
+    background-color: #ededed;
+    text-align: center;
 }

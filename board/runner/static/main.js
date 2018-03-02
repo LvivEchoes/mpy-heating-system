@@ -84,10 +84,10 @@ function show_action(action, i) {
 }
 
 
-function checkRequired(form) {
+function checkRequired(container) {
 
 
-    if (form.find('[required]').filter(function () {
+    if (container.find('[required]').filter(function () {
             $(this).css('border-color', 'red');
             return this.value === ''
 
@@ -100,7 +100,7 @@ function checkRequired(form) {
 }
 
 $(document).ready(function () {
-    $('#new_automation').on('submit', checkRequired);
+    load_config()
 });
 
 function check_all() {
@@ -126,10 +126,31 @@ function add_rule_ajax() {
 
 function rename_value(elm) {
     console.log('Renaming: ', elm.id)
-    
+
 }
 
 function delete_row(elm) {
     console.log('Deleting: ', elm.id)
 
+}
+
+
+function load_config() {
+    $.ajax({url: '/get_config'}).done(function (data) {
+        console.log('Recived config: ' + data);
+    })
+
+}
+
+function add_row(elm) {
+    if (!checkRequired(elm.closest('.new-row'))) {
+        return false;
+    }
+    else {
+        new_row_data = elm.closest('.new-row').find('input').serialize();
+        console.log(new_row_data);
+        // request_here
+
+
+    }
 }
