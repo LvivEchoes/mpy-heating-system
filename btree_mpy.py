@@ -6,7 +6,7 @@ class BTree(dict):
         try:
             self._path = path
             self._db = open(path, "r+b")
-            self.update(json.loads(self._db.read().decode()))
+            self.update(json.loads(self._db.read()))
             self._db.close()
 
         except OSError:
@@ -26,3 +26,7 @@ class BTree(dict):
     def __setitem__(self, k, v) -> None:
         super().__setitem__(k, v)
         self.flash()
+
+    def fetch(self, key):
+        self.open(self._path)
+        return self.get(key)

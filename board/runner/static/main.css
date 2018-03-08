@@ -52,6 +52,26 @@ ul.tabs li a.current {
 }
 
 /*Loader*/
+
+.loading_value {
+    margin: 0 auto;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid silver;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .spinner {
     margin: 0px auto;
     width: 50px;
@@ -117,14 +137,12 @@ ul.tabs li a.current {
     margin-top: 10px;
 }
 
-
 /*Style*/
-.section-labels{
+.section-labels {
     font-weight: bold;
 }
 
-
-input, select{
+input, select {
     border: 1px solid #000000;
 }
 
@@ -137,10 +155,12 @@ table {
 table tbody {
     background-color: white;
 }
+
 table thead {
     background-color: silver;
     font-weight: bold;
 }
+
 table td {
     border: 1px black solid;
 }
