@@ -18,7 +18,7 @@
             </tbody>
             <tr class="new-row">
                 <td><input name="temp_name" type="text" required placeholder="Назва давача"/></td>
-                <td><input name="temp_address" type="text" required placeholder="Адреса"/></td>
+                <td class="new_temp" id="temp_address"></td>
                 <td colspan="3"><input type="button" value="Додати" onclick="add_row($(this))"/></td>
             </tr>
 
@@ -40,6 +40,11 @@
             <tbody id="pomp">
 
             </tbody>
+            <tr class="new-row">
+                <td><input name="pomp_name" type="text" required placeholder="Назва насосу"/></td>
+                <td class="new_port" id="pomp_port"></td>
+                <td colspan="3"><input type="button" value="Додати" onclick="add_row($(this))"/></td>
+            </tr>
         </table>
     </div>
     <label class="section-labels" for="taps">Клапани</label>
@@ -57,6 +62,11 @@
 
             <tbody id="clap">
             </tbody>
+            <tr class="new-row">
+                <td><input name="clap_name" type="text" required placeholder="Назва клапана"/></td>
+                <td class="new_port" id="clap_port"></td>
+                <td colspan="3"><input type="button" value="Додати" onclick="add_row($(this))"/></td>
+            </tr>
         </table>
     </div>
     <label class="section-labels" for="3way_taps">Трьох-ходові клапани</label>
@@ -75,6 +85,12 @@
 
             <tbody id="3way">
             </tbody>
+            <tr class="new-row">
+                <td><input name="3way_name" type="text" required placeholder="Назва трьох-ходового клапана"/></td>
+                <td class="new_port" id="3way_port_1"></td>
+                <td class="new_port" id="3way_port_2"></td>
+                <td colspan="3"><input type="button" value="Додати" onclick="add_row($(this))"/></td>
+            </tr>
         </table>
     </div>
 

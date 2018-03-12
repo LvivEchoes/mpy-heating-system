@@ -3,6 +3,9 @@
         <option value="temp-rule_##id##">
             Температурна умова
         </option>
+        <option value="temp-dependency_##id##">
+            Температурна залежність
+        </option>
         <option value="motor-status_##id##">
             Стан насосу
         </option>
@@ -15,9 +18,8 @@
     <div class="rule-##id##-container">
         <div id="temp-rule_##id##" class="rule-##id## rule">
             <label for="temperature-##id##-number">температура:</label>
-            <select name="temp_source_##id##" id="temperature-##id##-number">
-                <option value="1">вулиця</option>
-                <option value="2">вихід з котла</option>
+            <select name="temp_source_##id##" id="temperature-##id##-number" class="data_temp">
+                <option value='0'></option>
             </select>
             <select name="temp_diff_type_##id##" id="temperature-##id##-rule">
                 <option value="1"> ></option>
@@ -30,12 +32,22 @@
             <input required name="temp_value_##id##" id="temperature-##id##-limit" type="number">
         </div>
 
+        <div id="temp-dependency_##id##" class="rule-##id## rule" style="display: none">
+            <label for="temp_origin_##id##">При температурі:</label>
+            <select name="temp_origin_##id##" id="temp-##id##-origin" class="data_temp">
+                <option value='0'></option>
+            </select>
+            <label for="temp_control-##id##">Контролювати</label>
+            <select name="temp_control_##id##" id="temp-control-##id##" class="data_temp">
+                <option value='0'></option>
+            </select>
+        </div>
+
         <div id="motor-status_##id##" class="rule-##id## rule"
              style="display: none">
             <label for="motor-##id##-number">насос:</label>
-            <select name="motor_source_id_##id##" id="motor-##id##-number">
-                <option value="1">вихід з газового котла</option>
-                <option value="1">вихід з деревяного котла</option>
+            <select name="motor_source_id_##id##" id="motor-##id##-number" class="data_pomp">
+                <option value="0"></option>
             </select>
             <select name="motor_rule_##id##" id="motor-##id##-rule">
                 <option value="on"> увімкнений</option>

@@ -20,10 +20,12 @@
              style="display: block;">
             <label
                     for="motor-##id##-number">насос:</label>
-            <select name="motor_source_##id##" id="motor-##id##-number">
-                <option value="1">вихід з газового котла</option>
-                <option value="2">вихід з деревяного котла</option>
+            <select name="motor_source_##id##" id="motor-##id##-number" class="data_pomp">
+                <option value="0"></option>
             </select>
+            <label
+                    for="motor_action_##id##"> режим
+                роботи:</label>
             <select name="motor_action_##id##" id="motor-##id##-action">
                 <option value="0"> вимкнути</option>
                 <option value="1"> увімкнути</option>
@@ -35,16 +37,13 @@
         <div id="3way_action_##id##" class="action-##id## action"
              style="display: none;">
             <label
-                    for="action-##id##-3-way-clap-source"> Режим
-                роботи:</label>
+                    for="action-##id##-3-way-clap-source"> назва трьох-ходового клапану: </label>
             <select name="3way_clap_source_##id##"
-                    id="action-##id##-3-way-clap-source">
-                <option value="0">Клапан 1</option>
-                <option value="1">Клапан 2</option>
-                <option value="2">Клапан 3</option>
+                    id="action-##id##-3-way-clap-source" class="data_3way">
+                <option value="0"></option>
             </select>
             <label
-                    for="action-##id##-3-way-clap-mode"> Режим
+                    for="action-##id##-3-way-clap-mode"> режим
                 роботи:</label>
             <select name="3way_clap_mode_##id##"
                     id="action-##id##-3-way-clap-mode">
@@ -57,16 +56,13 @@
         <div id="clap_action_##id##" class="action-##id## action"
              style="display: none;">
             <label
-                    for="action-##id##-clap-source"> Режим
-                роботи:</label>
+                    for="action-##id##-clap-source"> назва клапану: </label>
             <select name="clap_source_##id##"
-                    id="action-##id##-clap-source">
-                <option value="0">Клапан 1</option>
-                <option value="1">Клапан 2</option>
-                <option value="2">Клапан 3</option>
+                    id="action-##id##-clap-source" class="data_clap">
+                <option value="0"></option>
             </select>
             <label
-                    for="action-##id##-clap-mode"> Режим
+                    for="action-##id##-clap-mode"> режим
                 роботи:</label>
             <select name="clap_mode_##id##" id="action-##id##-clap-mode">
                 <option value="0"> закрити</option>
@@ -77,15 +73,14 @@
         <div id="vent_action_##id##" class="action-##id## action"
              style="display: none;">
             <label
-                    for="action-##id##-vent-source"> Режим
-                роботи:</label>
+                    for="action-##id##-vent-source"> назва вентилятора:</label>
             <select name="vent_source_##id##"
                     id="action-##id##-vent-source">
                 <option value="0">Вентилятор 1</option>
                 <option value="1">Вентилятор 2</option>
             </select>
             <label
-                    for="action-##id##-vent-mode"> Режим
+                    for="action-##id##-vent-mode"> режим
                 роботи:</label>
             <select name="vent_mode_##id##" id="action-##id##-vent-mode">
                 <option value="0"> вимкнути</option>

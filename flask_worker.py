@@ -1,55 +1,64 @@
 import json
 from typing import Union
-from flask import Flask, redirect, render_template
-from flask import request
+from quart import Quart, redirect, render_template
+from quart import request
+from board.runner.tools import device
+import asyncio
 
-app = Flask(__name__)
+app = Quart(__name__)
 app._static_folder = "board/runner/static"
 
-from btree_mpy import BTree
 
-db = BTree()
-db.open('db.json')
+def adopt_quart_form_data(data):
+    if app.__class__.__name__ != 'Quart':
+        return data
 
-
-class Device:
-    def scan_devices(self):
-        return [
-            "gsdgabc123ba",
-            "sgabc123bafd",
-            "fgfabc123baf",
-            "dgdfabc123ba",
-            "aaaabbbccc12"
-        ]
+    new_dict = {}
+    for k, v in data.items():
+        new_dict[k] = [v]
+    return new_dict
 
 
-def _get_config():
-    return db.get('config', {})
+@app.route('/add_device', methods=['POST'])
+def set_config():
+    form_data = yield from request.form
+
+    device.set_config(adopt_quart_form_data(form_data))
+    return json.dumps({})
 
 
-@app.route('/add_sensor')
-def set_config(config):
-    # db[]
-    pass
+@app.route('/rename_device', methods=['POST'])
+def rename_config():
+    form_data = yield from request.form
+    device.rename_config(adopt_quart_form_data(form_data))
+    return json.dumps({})
+
+
+@app.route('/delete_device', methods=['POST'])
+def delete_config():
+    form_data = yield from request.form
+
+    return json.dumps({'deleted': device.delete_config(adopt_quart_form_data(form_data))})
 
 
 @app.route('/get_config')
 def get_config():
-    return json.dumps(_get_config())
+    return json.dumps(device.get_config())
+    # return json.dumps({})
 
 
 @app.route('/get_values')
 def get_values():
-    return json.dumps(db.get('values', {}))
+    return json.dumps(device.get_values())
 
 
-@app.route('/get_device_settings')
-def get_device_settings():
-    device_settings = db.get('device', {})
-    detected_sensors = device_settings.get('detected_sensors', {})
-    used_sensors = [s['address'] for s in _get_config().get('temp').values()]
-    avalible_sensors = set(detected_sensors).difference(used_sensors)
-    return json.dumps(list(avalible_sensors))
+@app.route('/get_available_devices')
+def get_available_devices():
+    return json.dumps(device.get_available_devices())
 
 
+loop = asyncio.get_event_loop()
+
+loop.create_task(device.async_fetch_values())
+# loop.run_until_complete(asyncio.gather(feature))
 app.run(host='127.0.0.1', port=5005)
