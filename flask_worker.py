@@ -1,6 +1,5 @@
 import json
-from typing import Union
-from quart import Quart, redirect, render_template
+from quart import Quart
 from quart import request
 from board.runner.tools import device
 import asyncio
@@ -61,4 +60,4 @@ loop = asyncio.get_event_loop()
 
 loop.create_task(device.async_fetch_values())
 # loop.run_until_complete(asyncio.gather(feature))
-app.run(host='127.0.0.1', port=5005)
+app.run(host='127.0.0.1', port=5000)

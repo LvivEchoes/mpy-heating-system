@@ -132,6 +132,10 @@ ul.tabs li a.current {
 
 /*Automation*/
 
+#temp_depend_img {
+    width: 100%;
+}
+
 .rule, .action {
     margin-left: 50px;
     margin-top: 10px;

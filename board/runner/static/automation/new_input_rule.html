@@ -28,19 +28,34 @@
                 <option value="4"> >=</option>
                 <option value="5"> <></option>
             </select>
-            <label for="temperature-##id##-limit">значення</label>
-            <input required name="temp_value_##id##" id="temperature-##id##-limit" type="number">
+            <input id="value_temp_##id##" name="temp_dest_##id##" type="radio" value="value" onclick="$('#value_temp_div_##id##').show(); $('#sensor_temp_div_##id##').hide();"><label for="value_temp_##id##">ввести значення</label>
+            <input id="sensor_temp_##id##" name="temp_dest_##id##" type="radio" value="sensor" onclick="$('#value_temp_div_##id##').hide(); $('#sensor_temp_div_##id##').show();"><label for="sensor_temp_##id##">значення давача</label>
+            <div id="value_temp_div_##id##" style="display: none">
+                <label for="temperature-##id##-limit">значення</label>
+                <input required name="temp_value_##id##" id="temperature-##id##-limit" type="number">
+            </div>
+            <div id="sensor_temp_div_##id##" style="display: none">
+                <label for="sensor-temp-comp-##id##">давач</label>
+                <select name="temp_sensor_##id##" id="sensor-temp-comp-##id##" class="data_temp">
+                    <option value='0'></option>
+                </select>
+            </div>
         </div>
 
         <div id="temp-dependency_##id##" class="rule-##id## rule" style="display: none">
-            <label for="temp_origin_##id##">При температурі:</label>
+            <label for="temp_origin_##id##">При температурі
+                <bold>t1</bold>
+                :</label>
             <select name="temp_origin_##id##" id="temp-##id##-origin" class="data_temp">
                 <option value='0'></option>
             </select>
-            <label for="temp_control-##id##">Контролювати</label>
+            <label for="temp_control-##id##">Контролювати температуру
+                <bold>t2</bold>
+                :</label>
             <select name="temp_control_##id##" id="temp-control-##id##" class="data_temp">
                 <option value='0'></option>
             </select>
+            <img id="temp_depend_img" src="/static/img/temp_depend.png" s/>
         </div>
 
         <div id="motor-status_##id##" class="rule-##id## rule"
